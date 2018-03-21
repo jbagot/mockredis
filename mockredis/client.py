@@ -155,6 +155,7 @@ class MockRedis(object):
         """Emulate keys."""
         # making sure the pattern is unicode/str.
         try:
+            pattern = self._encode(pattern)
             pattern = pattern.decode('utf-8')
             # This throws an AttributeError in python 3, or an
             # UnicodeEncodeError in python 2
